@@ -51,13 +51,30 @@ EXAMPLES
 
 DHCP interface:
 
-    network::interface { "server01.company.com": interface => 'eth0', ensure => 'present', auto => true, type => 'dhcp', }
+    network::interface { "server01.company.com":
+        interface => 'eth0',
+        ensure => 'present',
+        auto => true,
+        type => 'dhcp',
+    }
 
 Static interface:
 
-    network::interface { "server01-lan.company.com": interface => 'eth0', ensure => 'present', auto => true, ip => '1.2.3.4', netmask => '255.255.255.224', gateway => '5.6.7.8', }
+    network::interface { "server01-lan.company.com":
+        interface => 'eth0',
+        ensure => 'present',
+        auto => true,
+        ip => '1.2.3.4',
+        netmask => '255.255.255.224',
+        gateway => '5.6.7.8',
+    }
 
 Bridged interface:
 
-    network::interface { "external interface for bridge": interface => 'eth0', ensure => 'present', auto => true, type => 'bridge', }
+    network::interface { "external interface for bridge":
+        interface => 'eth0',
+        ensure => 'present',
+        auto => true,
+        type => 'bridge',
+    }
     network::interface { "internal interface for bridge": interface => 'br0', ensure => present, auto => true, ip => '1.2.3.4', netmask => '255.255.255.224', gateway => '5.6.7.8', bridge_ports => 'eth0', }
