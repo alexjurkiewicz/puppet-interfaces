@@ -1,0 +1,32 @@
+# This file is managed by Puppet
+
+# <%= name %>
+<% if auto == true -%>
+auto <%= interface %>
+<% end -%>
+<% if @type == 'bridge' -%>
+iface <%= interface %> inet manual
+<% else -%>
+iface <%= interface %> inet <%= @type %>
+<% end -%>
+<% if @type != 'bridge' and @ip -%>    address <%= ip %>
+<% end -%>
+<% if @type != 'bridge' and @netmask -%>    netmask <%= netmask %>
+<% end -%>
+<% if @type != 'bridge' and @broadcast -%>    broadcast <%= broadcast %>
+<% end -%>
+<% if @type != 'bridge' and @gateway -%>    gateway <%= gateway %>
+<% end -%>
+<% if @type != 'bridge' and @bridge_ports -%>    bridge_ports <%= bridge_ports %>
+<% end -%>
+<% if @type != 'bridge' and @dns_servers -%>    dns-nameservers <%= dns_servers %>
+<% end -%>
+<% if @type != 'bridge' and @dns_search -%>    dns-search <%= dns_search %>
+<% end -%>
+<% if @type != 'bridge' and @real_pre_up -%><% real_pre_up.flatten.each do |cmd| -%>    pre-up <%= cmd %>
+<% end -%>
+<% end -%>
+<% if @type != 'bridge' and @real_post_up -%><% real_post_up.flatten.each do |cmd| -%>    post-up <%= cmd %>
+<% end -%>
+<% end -%>
+
