@@ -3,6 +3,13 @@ puppet-interfaces
 
 Per-interface network management for Puppet.
 
+    network::interface { "server01.company.com":
+        interface => 'eth0',
+        ensure => 'present',
+        auto => true,
+        type => 'dhcp',
+    }
+
 Requirements
 ============
 
