@@ -45,8 +45,8 @@ define network::interface (
             "present": {
                 file { "/etc/network/interfaces.d/${interface}.cfg":
                     ensure  => present,
-                    content => template("network/interface.erb"),
-                    owner   => root, group => root, mode => 0444,
+                    content => template('network/interface.erb'),
+                    owner   => root, group => root, mode => '0440',
                 }
             }
             "absent": {

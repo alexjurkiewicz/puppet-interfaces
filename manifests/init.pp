@@ -7,13 +7,13 @@ class network {
 
     file { '/etc/network/interfaces':
         ensure  => present,
-        mode    => '0444', owner => 'root', group => 'root',
+        mode    => '0440', owner => 'root', group => 'root',
         source  => 'puppet:///modules/network/interfaces',
     }
 
     file { '/etc/network/interfaces.d':
         ensure  => directory,
-        mode    => '0555', owner => 'root', group => 'root',
+        mode    => '0550', owner => 'root', group => 'root',
     }
 
     package { 'iputils-arping': ensure => installed }
