@@ -1,7 +1,7 @@
 puppet-interfaces
 =================
 
-Per-interface network management for Ubuntu 11.10+.
+Per-interface network management.
 
 Example:
 
