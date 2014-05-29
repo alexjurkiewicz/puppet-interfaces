@@ -5,14 +5,21 @@ Per-interface network management for Ubuntu 11.10+.
 
 Example:
 
-    network::interface { "server01.company.com": interface => 'eth0', ensure => 'present', auto => true, type => 'dhcp', }
+    network::interface { "server01.company.com":
+      interface => 'eth0',
+      ensure => 'present',
+      auto => true,
+      type => 'dhcp',
+    }
 
 Requirements
 ============
 
-Ubuntu 11.10+. If your interfaces(5) manpage mentions the 'source' parameter, you can use this module.
+If your interfaces(5) manpage mentions the 'source' parameter, you can use this module.
 
-Sorry Debian users, this feature is not backported to you yet. Sorry RH users, your network configuration is different.
+Known supported: Ubuntu 11.10+, Debian 7+ (Wheezy).
+
+Sorry RH users, your network configuration is different (patches welcome).
 
 Usage
 =====
